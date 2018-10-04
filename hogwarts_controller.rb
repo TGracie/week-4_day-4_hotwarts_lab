@@ -4,6 +4,7 @@ require( 'pry-byebug' )
 require_relative( './models/student.rb' )
 require_relative( './models/house.rb' )
 ## can do a * to require an entire folder but priveleges dictate what you may want to grant access to
+## need to be careful about where requiring or not (was working because it was in seeds but can't count on that elsewhere)
 also_reload( './models/*' )
 
 ## if its going to be in a view give it an instance variable, otherwise just keep it tight
