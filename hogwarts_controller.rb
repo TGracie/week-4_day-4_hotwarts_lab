@@ -65,51 +65,51 @@ also_reload( './models/*' )
 
   ## INDEX ROUTE
   get('/houses') do
-    @Houses = House.all()
+    @house = House.all()
     erb(:house_index)
   end
 
-  ## NEW ROUTE ##
-  get('/houses/new') do
-    erb(:house_new)
-  end
+  # ## NEW ROUTE ##
+  # get('/houses/new') do
+  #   erb(:house_new)
+  # end
 
   ## SHOW ##   ## specific student ##
   get('/houses/:id') do
     id = params[:id].to_i #everything in params is a string so needs an   integer
-    @student = House.find(id)
+    @house = House.find(id)
     erb(:house_show)
   end
 
-  ## CREATE ##
-  post('/houses') do
-    @student = House.new(params)
-    @student.save
-    erb(:house_create)
-  end
-
- ## DELETE ##
- post('/houses/:id/delete') do
-  id = params[:id].to_i
-  @student = House.find(id)
-  @student.delete
-  # erb(:delete)
-  redirect('/students')
- end
-
-  ## EDIT ##
-  get('/houses/:id/edit') do
-    @id = params[:id].to_i
-    @student = House.find(@id)
-    erb(:edit)
-  end
-
-  ## UPDATE ##
-  post('/houses/:id') do
-    # id = params[:id].to_i
-    # @student = House.find(id)
-    # @student.update
-    House.new(params).update
-    ## What we're doing is populating the old object with this new objects data, the new object is the update being popped into place of the old one, only the id persists
-    redirect('/students')
-  end
+ #  ## CREATE ##
+ #  post('/houses') do
+ #    @house = House.new(params)
+ #    @house.save
+ #    erb(:house_create)
+ #  end
+ #
+ # ## DELETE ##
+ # post('/houses/:id/delete') do
+ #  id = params[:id].to_i
+ #  @house = House.find(id)
+ #  @house.delete
+ #  # erb(:delete)
+ #  redirect('/students')
+ # end
+ #
+ #  ## EDIT ##
+ #  get('/houses/:id/edit') do
+ #    @id = params[:id].to_i
+ #    @house = House.find(@id)
+ #    erb(:edit)
+ #  end
+ #
+ #  ## UPDATE ##
+ #  post('/houses/:id') do
+ #    # id = params[:id].to_i
+ #    # @student = House.find(id)
+ #    # @student.update
+ #    House.new(params).update
+ #    ## What we're doing is populating the old object with this new objects data, the new object is the update being popped into place of the old one, only the id persists
+ #    redirect('/students')
+ #  end

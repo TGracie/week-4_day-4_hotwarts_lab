@@ -1,0 +1,13 @@
+<h2>All Houses</h2>
+
+<% for house in @house %>
+
+  <hr/>
+<div class="house">
+  <p>Name: <%= house.name() %></p>
+  <p><a href="/houses/<%= house.id %>">View House</a></p>
+
+  <hr/>
+</div>
+
+<% end %>

@@ -33,16 +33,16 @@ attr_reader :id, :name, :student_id, :url
   end
 
   def self.all()
-  sql = "SELECT * FROM houses"
-  houses = SqlRunner.run( sql )
-  result = houses.map { |house| House.new(house) }
-  return result
+    sql = "SELECT * FROM houses"
+    houses = SqlRunner.run( sql )
+    result = houses.map { |house| House.new(house) }
+    return result
   end
 
   def self.find( id )
     sql = "SELECT * FROM houses WHERE id = $1"
     values = [id]
-    student = SqlRunner.run( sql, values )
+    house = SqlRunner.run( sql, values )
     result = House.new( house.first )
     return result
   end
