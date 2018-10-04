@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hogwarts</title>
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <section class="wrapper">
+    <header>
+      Hogwarts
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/students">View All Students</a>
+        </li>
+        <li>
+          <a href="/houses">View All Houses</a>
+        </li>
+        <li>
+          <a href="/students/new">Play God</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+
+      <%= yield %>
+
+    </main>
+    <footer>&copy 2018</footer>
+  </section>
+</body>
+</html>

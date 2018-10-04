@@ -1,0 +1,17 @@
+<h2>All Students</h2>
+
+<% for student in @students %>
+
+  <hr/>
+<div class="students">
+
+  <p>First Name: <%= student.first_name() %></p>
+  <p>Second Name: <%= student.second_name() %></p>
+  <p>House: <%= student.house %></p>
+  <p>Age: <%= student.age %></p>
+  <p><a href="/students/<%= student.id %>">View Student</a></p>
+
+  <hr/>
+</div>
+
+<% end %>
