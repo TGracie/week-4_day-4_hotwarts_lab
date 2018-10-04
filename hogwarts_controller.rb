@@ -2,8 +2,11 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
 require_relative( './models/student.rb' )
+require_relative( './models/house.rb' )
+## can do a * to require an entire folder but priveleges dictate what you may want to grant access to
 also_reload( './models/*' )
 
+## if its going to be in a view give it an instance variable, otherwise just keep it tight
 # #RESTful routing Students
 
   ## INDEX ROUTE
